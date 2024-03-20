@@ -9,7 +9,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Aubrey">
-    <link rel="stylesheet" href="Public/Css/style_login.css">
     <script src="Public/Js/script.js"></script>
     <title>Login</title>
 </head>
@@ -24,10 +23,10 @@ session_start();
     </header>
 
     <section class="login_section">
-        <h1>Biblioteca</h1>
+        <h1>Sla</h1>
 
         <div class="login_box">
-            <h2>Login</h2>
+            <h2>sla</h2>
 
             <form action="loginconfig.php" method="POST">
                 <div class="input">

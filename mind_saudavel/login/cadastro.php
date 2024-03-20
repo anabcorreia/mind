@@ -2,7 +2,7 @@
 session_start(); // Inicie a sessão no início do arquivo
 
 require_once '../db/db.php';
-require_once 'App/Controller/UserController.php';
+require_once 'app/controller/UserController.php';
 
 $userController = new UserController($pdo);
 
@@ -20,7 +20,6 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Aubrey">
-    <link rel="stylesheet" href="Public/Css/style_cadastro.css">
     <script src="Public/Js/script.js"></script>
     <title>Cadastro</title>
 </head>
@@ -33,7 +32,7 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
     }
     ?>
     <section class="cadastro_section">
-        <h1>Biblioteca</h1>
+        <h1>sitezão</h1>
         <div class="cadastro_box">
             <h2>Cadastra-se</h2>
             <form method="post">

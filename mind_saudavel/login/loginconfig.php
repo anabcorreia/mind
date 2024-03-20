@@ -1,12 +1,12 @@
 <?php 
 session_start();
-include '../Config/config.php';
+include '../db/db.php';
 
 if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $query = "SELECT * FROM users WHERE (email = :email or nome = :email) AND senha = :senha";
+    $query = "SELECT * FROM user WHERE (email = :email or nome = :email) AND senha = :senha";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);
@@ -18,13 +18,13 @@ if (isset($_POST['email'])) {
         $_SESSION['usuarioId'] = $resultado['id'];
         $_SESSION['usuarioEmail'] = $resultado['email'];
         $_SESSION['usuarioNomedeUsuario'] = $resultado['nome'];
-        $_SESSION['usuarioNiveisAcessoId'] = $resultado['tipo_usuario'];
+        $_SESSION['usuarioNiveisAcessoId'] = $resultado['tipo'];
 
         
         if ($_SESSION['usuarioNiveisAcessoId'] == "1") {
-            header("Location: ../LoginADM/index.php");
+            header("Location: ../adm/index.php");
         } elseif ($_SESSION['usuarioNiveisAcessoId'] == "2") {
-            header("Location: ../SS/index.php");
+            header("Location: ../index.php");
         }
     } else {
         $_SESSION['nao_autenticado'] = true;
