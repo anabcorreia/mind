@@ -1,6 +1,6 @@
 <?php
 require_once '../db/db.php';
-require_once 'App/Controller/UserController.php';
+require_once 'app/controller/UserController.php';
 
 $userController = new UserController($pdo);
 
