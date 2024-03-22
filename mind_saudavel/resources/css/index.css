@@ -20,7 +20,7 @@ body, html{
 
 header{
     grid-area: cab;
-    background-color: #9EFF8E;
+    background-color: #077d45d1;
 }
 
 section{
@@ -37,28 +37,36 @@ footer{
 .logo {
     max-width: 10vw;
     margin-left: 1vw;
+    padding: 1vw;
 }
 
 .bt {
     float: right;
-    margin-right: 1vw;
-    padding: 2vw;
-   
+    margin-right: 0vw;
+    padding: 3vw;
 }
+
 
 .button {
     color: #fff;
     border: none;
     padding: 1vw 5vw;
     cursor: pointer;
-    background-color: aqua;
+    background-color: #00ffac;
 }
 
 .container {
-    grid-area: pag;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    line-height: 1.5;
-    background-color: #f2f2f2;
+    width: 100vw;
+    height: 300vw;
     margin: 0 auto;
+    padding: 2vw;
+    max-width: 80vw;
+    background-color: white;
+    display: flex;
+
+
+}
+
+.cr {
+    max-width: 10vw;
 }
