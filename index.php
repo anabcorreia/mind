@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-
+<div class="grid">
     <header><img src="mind_saudavel/resources/img/lg.png" alt="logo" class="logo">
 
 <div class="bt">
@@ -36,8 +36,17 @@
 </section>
 
 <footer>
-
-<a>xxxxxxxxxxxxxxxxxxxxxxxx</a>
+<div class="fot">
+<div><p class="p">Informações de contato
+</p></div>
+<div>
+<h4>
+(18) 99627-9501<br>
+comunicacao.saude@fiocruz.br<br>
+Instagram: saude_sempre</h4>
+</div>
+</div>
 </footer>
+</div>
 </body>
 </html>
