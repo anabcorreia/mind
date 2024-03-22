@@ -9,16 +9,22 @@ body, html{
     margin: 0 auto;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 9vw 47.5vw 3vw;
+    grid-template-rows: 12vw 47.5vw 3vw;
     grid-template-areas:
-        "cabecalho cabecalho"
-        "secao barra-lateral"
-        "rodape rodape";
+        "cabecalho"
+        "secao"
+        "rodape";
 }
 
 header{
     grid-area: cabecalho;
     background-color: #077d45d1;
+    display: flex;
+}
+
+header ul{
+    display: flex;
+    flex-direction: row;
 }
 
 section{

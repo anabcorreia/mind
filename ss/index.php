@@ -8,14 +8,21 @@
 </head>
 <body>
 <div class="grid">
-    <header><img src="../mind_saudavel/resources/img/lg.png" alt="logo" class="logo">
-
-<div class="bt">
-    <button class="button" ><a href="mind_saudavel/login/login.php">Logue-já!</a></button>
-    <button class="button" ><a href="mind_saudavel/login/cadastro.php">Crie sua conta!</a></button>
-</div>
-
+    <header>
+    <div id="menu">  <div><img src="../mind_saudavel/resources/img/lg.png" alt="logo" class="logo"></div>
+    <ul>
+      
+       
+    <li><a href="#" >ARTIGOS</a></li>
+    <li><a href="#" >NOTÍCIAS</a></li>
+    <li><a href="#">JOGOS</a></li>
+    <li><a href="#">PRODUTOS</a></li>
+    <li><a href="#">I.A</a></li>
+    <li><a href="#">AJUDA</a></li>
+</ul>   </div>
     </header>
+
+
 
 <section>
     <br>
