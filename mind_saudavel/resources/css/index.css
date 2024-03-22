@@ -56,6 +56,11 @@ footer{
     font-size: 2vw;
 }
 
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
 .container {
     width: 80vw;
     height: 20vw;

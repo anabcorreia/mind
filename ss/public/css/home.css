@@ -1,0 +1,41 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+}
+
+.grid {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 9vw 47.5vw 3vw;
+    grid-template-areas:
+        "cabecalho cabecalho"
+        "secao barra-lateral"
+        "rodape rodape";
+}
+
+header{
+    grid-area: cabecalho;
+    background-color: #077d45d1;
+}
+
+section{
+    grid-area: secao;
+    background-color: #D2FFD1;
+    font-family: sans-serif;
+}
+
+footer{
+    grid-area: rodape;
+    background-color: #077d45d1;
+    height: 7vw;
+    
+}
+
+.logo {
+    max-width: 10vw;
+    margin-left: 1vw;
+    padding: 1vw;
+}
