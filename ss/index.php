@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mind_saudavel/resources/css/index.css">
+    <link rel="stylesheet" href="public/css/home.css">
     <title>Document</title>
 </head>
 <body>
 <div class="grid">
-    <header><img src="mind_saudavel/resources/img/lg.png" alt="logo" class="logo">
+    <header><img src="../mind_saudavel/resources/img/lg.png" alt="logo" class="logo">
 
 <div class="bt">
     <button class="button" ><a href="mind_saudavel/login/login.php">Logue-já!</a></button>
