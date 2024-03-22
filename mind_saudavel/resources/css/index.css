@@ -1,38 +1,86 @@
+
 body, html{
     margin: 0;
     padding: 0;
     letter-spacing: 1px;
-    font-family: 'Inter', sans-serif;
 }
 
 .grid {
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 100% 100% 100%; 
-    grid-template-rows: 60px auto auto;
+    grid-template-columns: 100%;
+    grid-template-rows: 9vw 47.5vw 3vw;
     grid-template-areas:
-        "cab"
-        "pag"
-        "rod";
+        "cabecalho cabecalho"
+        "secao barra-lateral"
+        "rodape rodape";
 }
 
 header{
-    grid-area: cab;
-    background-color: #9EFF8E;
+    grid-area: cabecalho;
+    background-color: #077d45d1;
 }
 
 section{
-    grid-area: pag;
+    grid-area: secao;
     background-color: #D2FFD1;
     font-family: sans-serif;
 }
 
 footer{
-    grid-area: rod;
-    background-color: #389A48;
+    grid-area: rodape;
+    background-color: #077d45d1;
+    height: 7vw;
+    
 }
 
 .logo {
-    max-width: 130px;
+    max-width: 10vw;
+    margin-left: 1vw;
+    padding: 1vw;
+}
+
+.bt {
+    float: right;
+    margin-right: 0vw;
+    padding: 2vw;
+}
+
+.button {
+    color: #fff;
+    border: none;
+    padding: 1vw 5vw;
+    cursor: pointer;
+    background-color: #00ffac;
+    font-size: 2vw;
+}
+
+.container {
+    width: 80vw;
+    height: 20vw;
+    margin: 0 auto;
+    padding: 2vw;
+    max-width: 80vw;
+    background-color: #077d45d1;
+    color: white;
+    display: flex;
+    font-size: 1.8vw;
+}
+
+.cr {
+    max-width: 25vw;
+    padding: 1vw;
+}
+
+.fot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.p {
+    padding: 1vw;
 }
