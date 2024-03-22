@@ -18,12 +18,10 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap">
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Aubrey">
-    <script src="Public/Js/script.js"></script>
+    <link rel="stylesheet" href="../../mind_saudavel/resources/css/login.css">
     <title>Cadastro</title>
 </head>
-<body style="background-image: url('Public/Assets/2108.w023.n001.891B.p1.891.jpg');">
+<body>
     <?php
     // Adicione esta parte para exibir a mensagem
     if (isset($_SESSION['mensagem'])) {
@@ -31,19 +29,54 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
         unset($_SESSION['mensagem']); // Remova a mensagem da sessão
     }
     ?>
-    <section class="cadastro_section">
-        <h1>sitezão</h1>
-        <div class="cadastro_box">
-            <h2>Cadastra-se</h2>
+    <section">
+        <div id="login">
+
+            <div class="card">
+                <div class="cadastro">
+            <h2>Cadastro</h2>
+            <img class="logo" src="../../mind_saudavel/resources/img/lg.png">
+            </div>
+            <div class="rs">
+                <img class="img" src="../../mind_saudavel/resources/img/facebook.png">
+                <img class="img" src="../../mind_saudavel/resources/img/insta.png">
+                <img class="img" src="../../mind_saudavel/resources/img/google.png">
+            </div>
+            </div>
+
+        <div class="linha"></div>
+
+        <div class="card">
+            <div class="card-content">
             <form method="post">
-                <input type="text" name="nome" placeholder="Nome Usuário" required>
-                <input type="text" name="email" placeholder="E-mail" required>
-                <input type="password" name="senha" placeholder="Senha" required>
-                <div class="button"><button type="submit">Criar</button>
+            <div class="card-content-area">
+                <label for="usuario">Nome Completo:</label>
+                <input type="text" name="nome" required>
+            </div>
+
+            <div class="card-content-area">
+                <label for="usuario">Nome de Usuário:</label>
+                <input type="text" name="nomeu" required>
+            </div>
+
+            <div class="card-content-area">
+                <label for="usuario">Email:</label>
+                <input type="text" name="email" required>
+            </div>
+
+            <div class="card-content-area">
+                <label for="usuario">Senha:</label>
+                <input type="password" name="senha" required>
+            </div>
+
+                <div class="card-footer">
+                    <button class="submit" type="submit">Cadastrar</button>
+                </div>
             </form>
-            <form action="login.php">
-                <button>Voltar</button>
-            </form></div>
+        </div>
+        </div>
+
+        </div>
         </div>
     </section>
 </body>
