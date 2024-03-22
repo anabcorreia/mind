@@ -11,8 +11,8 @@
     <header><img src="mind_saudavel/resources/img/lg.png" alt="logo" class="logo">
 
 <div class="bt">
-    <button class="button">logue-já!</button>
-    <button class="button">Crie sua conta</button>
+    <button class="button" href="mind_saudavel/login/login.php">Logue-já!</button>
+    <button class="button" href="mind_saudavel/login/cadastro.php">Crie sua conta</button>
 </div>
 
     </header>
