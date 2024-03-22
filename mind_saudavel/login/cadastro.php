@@ -29,7 +29,7 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
         unset($_SESSION['mensagem']); // Remova a mensagem da sessão
     }
     ?>
-    <section">
+    <section>
         <div id="login">
 
             <div class="card">
@@ -42,6 +42,11 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
                 <img class="img" src="../../mind_saudavel/resources/img/insta.png">
                 <img class="img" src="../../mind_saudavel/resources/img/google.png">
             </div>
+
+            <div class="pqp">
+                <p>Já tem uma conta? <a href="../../mind_saudavel/login/login.php">Logue nela!</a></p>
+            </div>
+
             </div>
 
         <div class="linha"></div>

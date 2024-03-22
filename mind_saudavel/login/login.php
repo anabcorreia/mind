@@ -7,9 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap">
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Aubrey">
-    <script src="Public/Js/script.js"></script>
+    <link rel="stylesheet" href="../../mind_saudavel/resources/css/login.css">
     <title>Login</title>
 </head>
 <body>
@@ -22,24 +20,50 @@ session_start();
         ?>
     </header>
 
-    <section class="login_section">
-        <h1>Sla</h1>
+    <section>
+        <div id="login">
 
-        <div class="login_box">
-            <h2>sla</h2>
+            <div class="card">
+                <div class="cadastro">
+            <h2>Login</h2>
+            <img class="logo" src="../../mind_saudavel/resources/img/lg.png">
+            </div>
+            <div class="rs">
+                <img class="img" src="../../mind_saudavel/resources/img/facebook.png">
+                <img class="img" src="../../mind_saudavel/resources/img/insta.png">
+                <img class="img" src="../../mind_saudavel/resources/img/google.png">
+            </div>
 
-            <form action="loginconfig.php" method="POST">
-                <div class="input">
-                    <input type="text" name="email" placeholder="E-mail ou Nome de Usuário">
-                    <input type="password" name="senha" placeholder="Senha">
+            <div class="pqp">
+                <p>Não tem uma conta? <a href="../../mind_saudavel/login/cadastro.php">Cadastre-se!</a></p>
+            </div>
+
+            </div>
+
+        <div class="linha"></div>
+
+        <div class="card">
+            <div class="card-content">
+            <form method="post">
+            <div class="card-content-area">
+                <label for="usuario">Email ou Nome de Usuário:</label>
+                <input type="text" name="nome" required>
+            </div>
+
+            <div class="card-content-area">
+                <label for="usuario">Senha:</label>
+                <input type="password" name="senha" required>
+            </div>
+
+                <div class="card-footer">
+                    <button class="submit" type="submit">Logar</button>
+                    <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
                 </div>
-                <div class="button">
-                    <button type="submit">Login</button>
             </form>
+        </div>
+        </div>
 
-            <form action="cadastro.php">
-            <button>Crie sua conta</button></div>
-            </form>
+        </div>
         </div>
     </section>
 </body>
