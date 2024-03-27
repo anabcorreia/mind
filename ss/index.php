@@ -3,57 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/home.css">
+    <link rel="stylesheet" href="public/CSS/cab-rod.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
 <div class="grid">
-    <header>
-    <div id="menu">  <div><img src="../mind_saudavel/resources/img/lg.png" alt="logo" class="logo"></div>
-    <ul>
-      
-       
-    <li><a href="#" >ARTIGOS</a></li>
-    <li><a href="#" >NOTÍCIAS</a></li>
-    <li><a href="#">JOGOS</a></li>
-    <li><a href="#">PRODUTOS</a></li>
-    <li><a href="#">I.A</a></li>
-    <li><a href="#">AJUDA</a></li>
-</ul>   </div>
-    </header>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a class="logo-a" href="index.php">
+                        <img src="public/Assets/logo.jpeg" alt="logo">
+                    </a>
+                </div>
+                <div class="menu-nav">
+                    <ul class="nav-list">
+                        <li class="nav-button"><a href="" class="nav-link">Ártigos</a></li>
+                        <li class="nav-button"><a href="" class="nav-link">Notícias</a></li>
+                        <li class="nav-button"><a href="" class="nav-link">Jogos</a></li>
+                        <li class="nav-button"><a href="" class="nav-link">Produtos</a></li>
+                        <li class="nav-button"><a href="" class="nav-link">MindScrib</a></li>
+                        <li class="nav-button"><a href="" class="nav-link">Ajuda</a></li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <a href="search.php">
+                        <img src="public/Assets/search.png" alt="search-icon">
+                    </a>
+                </div>
+            </nav>
+            <?php
+        session_start();
+        include 'verfica_login.php';
+    ?>
+<button><a href="logout.php">logout</a></button>   
+
+        </header>
+        <footer>
+            <div class="contato">
+                <div class="rod-txt">
+                    <p>Contato:</p>
+                </div>
+                <div class="rod-img">
+                    <div class="rs"><img src="" alt="rs"></div>
+                    <div class="rs"><img src="" alt="rs"></div>
+                    <div class="rs"><img src="" alt="rs"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
 
-
-<section>
-    <br>
-    <br>
-    <br>
-  
-   <div class="container">
-
-    <div><p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-         <div><img src="mind_saudavel/resources/img/cer.jpg" class="cr"></div>
-
-</div>
-</section>
-
-<footer>
-<div class="fot">
-<div><p class="p">Informações de contato
-</p></div>
-<div>
-<h4>
-(18) 99627-9501<br>
-comunicacao.saude@fiocruz.br<br>
-Instagram: saude_sempre</h4>
-</div>
-</div>
-</footer>
-</div>
 </body>
 </html>

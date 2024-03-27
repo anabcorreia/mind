@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Mar-2024 às 15:31
+-- Tempo de geração: 20-Mar-2024 às 13:10
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -30,18 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
+  `nome_u` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `tipo` int(11) NOT NULL
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Extraindo dados da tabela `user`
---
-
-INSERT INTO `user` (`id`, `nome`, `email`, `senha`, `tipo`) VALUES
-(1, 'a', 'r@gmail.com', 'a', 1),
-(2, 'b', 'b@gmail.com', 'b', 2);
 
 --
 -- Índices para tabelas despejadas
@@ -61,7 +53,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

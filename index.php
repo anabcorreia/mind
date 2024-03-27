@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mind_saudavel/resources/css/index.css">
+    <link rel="stylesheet" href="ss/public/CSS/index.css">
     <title>Document</title>
 </head>
 <body>
 <div class="grid">
-    <header><img src="mind_saudavel/resources/img/lg.png" alt="logo" class="logo">
+    <header><img src="ss/public/Assets/lg.png" alt="logo" class="logo">
 
 <div class="bt">
-    <button class="button" ><a href="mind_saudavel/login/login.php">Logue-já!</a></button>
-    <button class="button" ><a href="mind_saudavel/login/cadastro.php">Crie sua conta!</a></button>
+    <button class="button" ><a href="Login/login.php">Logue-já!</a></button>
+    <button class="button" ><a href="Login/cadastro.php">Crie sua conta!</a></button>
 </div>
 
     </header>
@@ -30,7 +30,7 @@
          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
-         <div><img src="mind_saudavel/resources/img/cer.jpg" class="cr"></div>
+         <div><img src="ss/public/Assets/cer.jpg" class="cr"></div>
 
 </div>
 </section>
