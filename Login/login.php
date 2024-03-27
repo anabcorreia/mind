@@ -31,6 +31,7 @@ session_start();
                 Nao tem uma conta?<a href="cadastro.php" class="no-underline">Cadastre-se!</a>
             </div>  
         </div>
+        
         <div class="log">  
             <form action="loginconfig.php" method="POST">
                 <div class="inp">
