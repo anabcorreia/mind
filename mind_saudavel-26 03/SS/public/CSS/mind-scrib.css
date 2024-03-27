@@ -1,0 +1,28 @@
+.chat{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+
+.perguntas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 90%;
+    height: 60vh;
+}
+
+.button-p{
+    font-size: 12px;
+    width: 20vw;
+    text-wrap: wrap;
+    height: 10vh;
+    border: 0;
+    background-color: #fff;
+}
