@@ -9,4 +9,5 @@
         <a href="user.php">Users</a>
         <a href="perguntas.php">Perguntas</a>
         <a href="artigos.php">Artigos</a>
+        <a href="noticias.php">Notícias</a>
     </div>

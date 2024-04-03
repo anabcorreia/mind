@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'mind-saudavel';
+$dbname = 'mind-sadavel';
 $username = 'root';
 $password = '';
 

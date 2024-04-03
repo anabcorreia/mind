@@ -34,9 +34,9 @@
                 </div>
             </div>
             <div class="redes">
-                <div class="rede-b"><a href=""></a></div>
-                <div class="rede-b"><a href=""></a></div>
-                <div class="rede-b"><a href=""></a></div>
+                <div class="rede-b"><a href=""><img src="public/assets/facebook.png" alt=""></a></div>
+                <div class="rede-b"><a href=""><img src="public/assets/insta.png" alt=""></a></div>
+                <div class="rede-b"><a href=""><img src="public/assets/google.png" alt=""></a></div>
             </div>
             <div class="cad-txt">
                 Já possui uma conta?<a href="login.php" class="no-underline">Logue nela!</a>

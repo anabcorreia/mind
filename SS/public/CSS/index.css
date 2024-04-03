@@ -1,0 +1,68 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+    width: 100vw;
+}
+
+.lado-e{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+.lado-e img{
+    width: 40vw;
+}
+
+.lado-d{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    padding: 0 5vw 0 0;
+}
+
+.ld-txt{
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+}
+
+@media (width <= 576px){
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+    
+    .lado-e{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 4vh;
+    }
+    
+    .lado-e img{
+        width: 60vw;
+    }
+    
+    .lado-d{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        padding: 0 5vw 0 0;
+    }
+    
+    .ld-txt{
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+    }
+    
+}
