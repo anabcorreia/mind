@@ -53,8 +53,10 @@
         <section>
             <?php foreach ($artigos as $artigo): ?>    
                 <div class="container">
+                    <?php echo '<a class="bt-cont" href="l-artigo.php?id=' . $artigo['id'] . '">'?>
                     <div class="cont-img"><img src="../uploads/<?php echo $artigo['imagem']; ?>" alt="Imagem do artigo"></div>
                     <div class="cont-txt"><p><?php echo $artigo['titulo']; ?></p></div>
+                    </a>
                 </div>
             <?php endforeach; ?>
         </section>

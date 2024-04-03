@@ -77,4 +77,3 @@
     </div>
 </body>
 </html>
-<scrip src="public/js/menu-mob.js"></script>
