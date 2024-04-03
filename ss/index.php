@@ -47,9 +47,9 @@
                     <p>Contato:</p>
                 </div>
                 <div class="rod-img">
-                    <div class="rs"><img src="" alt="rs"></div>
-                    <div class="rs"><img src="" alt="rs"></div>
-                    <div class="rs"><img src="" alt="rs"></div>
+                    <div class="rs"><img src="../ss/public/Assets/insta.png" alt="rs"></div>
+                    <div class="rs"><img src="../ss/public/Assets/facebook.png" alt="rs"></div>
+                    <div class="rs"><img src="../ss/public/Assets/google.png" alt="rs"></div>
                 </div>
             </div>
         </footer>
