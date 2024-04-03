@@ -48,12 +48,12 @@
         <section>
 
             <div class="container">
-                <div class="cont-img"><img src="" alt="Imagem do Jogo"></div>
+                <div class="cont-img"><img src="../ss/public/Assets/1.png" alt="Imagem do Jogo"></div>
                 <div class="cont-txt">Jogo da memória</div>
                 <div class="jogar"><a href="../jogos/memoria/">Jogar!</a></div>
             </div>
             <div class="container">
-                <div class="cont-img"><img src="" alt="Imagem do Jogo"></div>
+                <div class="cont-img"><img src="../ss/public/Assets/2.png" alt="Imagem do Jogo"></div>
                 <div class="cont-txt">Jogo da cobrinha</div>
                 <div class="jogar"><a href="../jogos/cobrinha/cobrinha.html">Jogar!</a></div>
             </div>
