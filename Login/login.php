@@ -43,7 +43,7 @@ session_start();
                     <input type="password" name="senha" placeholder="Senha">
                 </div>
                 <div class="red-senha">
-                    <a href="redefinir-senha.php" class="no-underline red-senha-txt">Esqueceu sua senha?</a>
+                    <a href="redefinir/index.php" class="no-underline red-senha-txt">Esqueceu sua senha?</a>
                 </div>
                 <div class="but">
                     <button type="submit">Logar</button>
