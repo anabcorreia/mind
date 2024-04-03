@@ -23,7 +23,7 @@
                             <td><?php echo $artigo['titulo']; ?></td>
                             <td><?php echo $artigo['conteudo']; ?></td>
                             <td><?php echo $artigo['autor']; ?></td>
-                            <td><?php echo $artigo['imagem']; ?></td>
+                            <td><img src="<?php echo $artigo['imagem']; ?>"></td>
                 <?php endforeach; ?>
                 <tbody>
             </table>

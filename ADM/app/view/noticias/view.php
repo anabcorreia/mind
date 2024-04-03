@@ -1,3 +1,10 @@
+<?php
+include 'C:/xampp/htdocs/mind_saudavel/db/db.php';
+include_once 'C:/xampp/htdocs/mind_saudavel/ADM/app/controller/controller.php';
+
+$noticiaController = new noticiaController($pdo);
+$noticias = $noticiaController->listarNoticias();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +30,7 @@
                             <td><?php echo $noticia['titulo']; ?></td>
                             <td><?php echo $noticia['conteudo']; ?></td>
                             <td><?php echo $noticia['data']; ?></td>
-                            <td><?php echo $noticia['imagem']; ?></td>
+                            <td><img src="<?php echo $noticia['imagem']; ?>"></td>
                 <?php endforeach; ?>
                 <tbody>
             </table>

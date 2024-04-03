@@ -1,6 +1,11 @@
 <?php
         session_start();
         include 'verfica_login.php';
+        require_once '../db/db.php';
+        require_once 'App/Controller/controller.php';
+
+        $produtosController = new produtosController($pdo);
+        $produtos = $produtosController->listarProdutos();
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,13 +51,14 @@
             </nav>
         </header>
         <section>
-
+            <?php foreach($produtos as $produto): ?>
             <div class="container">
-                <div class="cont-img"><img src="" alt="Imagem do produto"></div>
-                <div class="cont-txt"><p>Produto</p></div>
+                <div class="cont-img"><img src="../uploads/<?php echo $produto['imagem']; ?>" alt="Imagem do produto"></div>
+                <div class="cont-txt"><p><?php echo $produto['nome']; ?></p></div>
+                <div class="cont-txt"><p>R$<?php echo $produto['preco']; ?></p></div>
                 <div class="comprar"><a href="">Comprar!</a></div>
             </div>
-            
+            <?php endforeach; ?>
         </section>
         <footer>
             <div class="contato">

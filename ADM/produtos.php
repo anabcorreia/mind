@@ -7,16 +7,20 @@ require_once 'App/Controller/controller.php';
 
 $produtosController = new ProdutosController($pdo);
 
+if (isset($_FILES['imagem']) && !empty($_FILES['imagem'])) {
+    $imagem = "../uploads/" . $_FILES['imagem']['name'];
+    move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
+}
+
 if (isset($_POST['nome']) && 
     isset($_POST['descricao']) &&    
     isset($_POST['preco']) &&
     isset($_POST['tipo']) &&
     isset($_FILES['imagem'])) 
 {
-    $artigosController->criarArtigo($_POST['titulo'], $_POST['conteudo'], $_POST['autor'], $imagem);
+    $produtosController->criarProduto($_POST['nome'], $_POST['descricao'], $_POST['preco'], $_POST['tipo'], $imagem);
     header('Location: #');
 }
-
 
 // Excluir produto
 if (isset($_POST['excluir_id'])) {
@@ -41,11 +45,12 @@ $produtos = $produtosController->listarProdutos();
         <a href="index.php">Voltar</a>
         <h1>Produtos</h1>
     </header>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <input type="text" name="nome" placeholder="Nome do Produto" required>
         <input type="text" name="descricao" placeholder="Descricao do Produto" required>
         <input type="text" name="preco" placeholder="Preco" required>
         <input type="text" name="tipo" placeholder="Tipo do produto">
+        <input type="file" name="imagem" required>
         <button type="submit">Adicionar Produto</button>
     </form>
 

@@ -69,8 +69,8 @@ class produtosController {
         $this->produtoModel = new ProdutoModel($pdo);
     }
 
-    public function criarProduto($nome, $descricao, $preco, $tipo) {
-        $this->produtoModel->criarProduto($nome, $descricao, $preco, $tipo);
+    public function criarProduto($nome, $descricao, $preco, $tipo, $imagem) {
+        $this->produtoModel->criarProduto($nome, $descricao, $preco, $tipo, $imagem);
     }
 
     public function listarProdutos() {
@@ -82,8 +82,8 @@ class produtosController {
         include 'C:\xampp\htdocs\mind_saudavel\ADM\app\view\produtos\view.php';
     }
 
-    public function atualizarProduto($id, $nome, $descricao, $preco, $tipo) {
-        $this->produtoModel->atualizarProduto($id, $nome, $descricao, $preco, $tipo);
+    public function atualizarProduto($id, $nome, $descricao, $preco, $tipo, $imagem) {
+        $this->produtoModel->atualizarProduto($id, $nome, $descricao, $preco, $tipo, $imagem);
     }
     
     public function excluirProduto ($id) {
@@ -121,8 +121,8 @@ class artigosController {
     }
 }
 
-class noticiasController {
-    private $noticiasModel;
+class noticiaController {
+    private $noticiaModel;
 
     public function __construct($pdo) {
 

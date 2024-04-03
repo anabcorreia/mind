@@ -5,7 +5,12 @@ include 'verfica_login.php';
 require_once '../db/db.php';
 require_once 'App/Controller/controller.php';
 
-$noticiasController = new noticiasController($pdo);
+$noticiaController = new noticiaController($pdo);
+
+if (isset($_FILES['imagem']) && !empty($_FILES['imagem'])) {
+    $imagem = "../uploads/" . $_FILES['imagem']['name'];
+    move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
+}
 
 //criar Noticia
 if (isset($_POST['titulo']) && 
@@ -13,16 +18,16 @@ if (isset($_POST['titulo']) &&
     isset($_POST['data']) &&
     isset($_FILES['imagem'])) 
 {
-    $artigosController->criarArtigo($_POST['titulo'], $_POST['conteudo'], $_POST['data'], $imagem);
+    $noticiaController->criarNoticia($_POST['titulo'], $_POST['conteudo'], $_POST['data'], $imagem);
     header('Location: #');
 }
 
 // Excluir Noticia
 if (isset($_POST['excluir_id'])) {
-    $noticiasController->excluirnoticia($_POST['excluir_id']);
+    $noticiaController->excluirnoticia($_POST['excluir_id']);
 }
 
-$noticias = $noticiasController->listarNoticias();
+$noticias = $noticiaController->listarNoticias();
 
 ?>
 
@@ -40,7 +45,7 @@ $noticias = $noticiasController->listarNoticias();
         <a href="index.php">Voltar</a>
         <h1>Noticias</h1>
     </header>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <input type="text" name="titulo" placeholder="Titulo" required>
         <input type="text" name="conteudo" placeholder="conteudo" required>
         <input type="date" name="data" placeholder="data" required>
@@ -49,7 +54,7 @@ $noticias = $noticiasController->listarNoticias();
     </form>
 
     <?php
-        $noticiasController->exibirListaNoticia();
+        $noticiaController->exibirListaNoticia();
     ?>
 
     <h2>Excluir Noticia</h2>

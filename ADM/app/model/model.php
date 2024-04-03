@@ -80,10 +80,10 @@ class ProdutoModel {
     }
 
     // Model para criar Produtos
-    public function criarProduto($nome, $descricao, $preco, $tipo) {
-        $sql = "INSERT INTO produtos (nome, descricao, preco, tipo) VALUES (?, ?, ?, ?)";
+    public function criarProduto($nome, $descricao, $preco, $tipo, $imagem) {
+        $sql = "INSERT INTO produtos (nome, descricao, preco, tipo, imagem) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$nome, $descricao, $preco, $tipo]);
+        $stmt->execute([$nome, $descricao, $preco, $tipo, $imagem]);
     }
 
     // Model para listar Produtos
@@ -94,10 +94,10 @@ class ProdutoModel {
     }
 
     // Model para atualizar Produtos
-    public function atualizarProduto($id, $nome, $descricao, $preco, $tipo){
-        $sql = "UPDATE produtos SET nome = ?, descricao = ?, preco = ?, tipo = ? WHERE id = ?";
+    public function atualizarProduto($id, $nome, $descricao, $preco, $tipo, $imagem){
+        $sql = "UPDATE produtos SET nome = ?, descricao = ?, preco = ?, tipo = ?, imagem = ? WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$nome, $descricao, $preco, $tipo, $id]);
+        $stmt->execute([$nome, $descricao, $preco, $tipo, $imagem, $id]);
     }
     
     // Model para deletar perguntas
