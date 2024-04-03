@@ -10,16 +10,13 @@ $produtosController = new ProdutosController($pdo);
 if (isset($_POST['nome']) && 
     isset($_POST['descricao']) &&    
     isset($_POST['preco']) &&
-    isset($_POST['tipo'])) 
+    isset($_POST['tipo']) &&
+    isset($_FILES['imagem'])) 
 {
-    $produtosController->criarproduto($_POST['nome'], $_POST['descricao'], $_POST['preco'], $_POST['tipo']);
+    $artigosController->criarArtigo($_POST['titulo'], $_POST['conteudo'], $_POST['autor'], $imagem);
     header('Location: #');
 }
 
-// Atualiza produto
-if (isset($_POST['id']) && isset($_POST['atualizar_nome']) && isset($_POST['atualizar_descricao']) && isset($_POST['atualizar_preco']) && isset($_POST['atualizar_tipo'])) {
-    $produtosController->atualizarproduto($_POST['id'], $_POST['atualizar_nome'], $_POST['atualizar_descricao'], $_POST['atualizar_preco'], $_POST['atualizar_tipo']);
-}
 
 // Excluir produto
 if (isset($_POST['excluir_id'])) {
@@ -56,21 +53,6 @@ $produtos = $produtosController->listarProdutos();
         $produtosController->exibirListaProdutos();
     ?>
 
-<fieldset>
-    <h2>Atualizar Produto</h2>
-    <form method="post">
-        <select name="id">
-            <?php foreach ($produtos as $produto): ?>
-                <option value="<?php echo $produto['id']; ?>"><?php echo $produto['id']; ?></option>
-            <?php endforeach; ?>
-        </select>
-        <input type="text" name="atualizar_nome" placeholder="Novo Nome do Produto" required>
-        <input type="text" name="atualizar_descricao" placeholder="Nova Descricao do Produto" required>
-        <input type="text" name="atualizar_preco" placeholder="Novo Preco" required>
-        <input type="text" name="atualizar_tipo" placeholder="Novo Tipo de Produto" required>
-        <button type="submit">Atualizar Produto</button>
-    </form>
-    </fieldset>
     <h2>Excluir Produto</h2>
     <form method="post">
         <select name="excluir_id">
