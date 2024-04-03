@@ -7,18 +7,19 @@ require_once 'App/Controller/controller.php';
 
 $produtosController = new ProdutosController($pdo);
 
+if (isset($_FILES['imagem']) && !empty($_FILES['imagem'])) {
+    $imagem = "../uploads/" . $_FILES['imagem']['name'];
+    move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
+}
+
 if (isset($_POST['nome']) && 
     isset($_POST['descricao']) &&    
     isset($_POST['preco']) &&
-    isset($_POST['tipo'])) 
+    isset($_POST['tipo']) &&
+    isset($_FILES['imagem'])) 
 {
-    $produtosController->criarproduto($_POST['nome'], $_POST['descricao'], $_POST['preco'], $_POST['tipo']);
+    $produtosController->criarProduto($_POST['nome'], $_POST['descricao'], $_POST['preco'], $_POST['tipo'], $imagem);
     header('Location: #');
-}
-
-// Atualiza produto
-if (isset($_POST['id']) && isset($_POST['atualizar_nome']) && isset($_POST['atualizar_descricao']) && isset($_POST['atualizar_preco']) && isset($_POST['atualizar_tipo'])) {
-    $produtosController->atualizarproduto($_POST['id'], $_POST['atualizar_nome'], $_POST['atualizar_descricao'], $_POST['atualizar_preco'], $_POST['atualizar_tipo']);
 }
 
 // Excluir produto
@@ -44,11 +45,12 @@ $produtos = $produtosController->listarProdutos();
         <a href="index.php">Voltar</a>
         <h1>Produtos</h1>
     </header>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <input type="text" name="nome" placeholder="Nome do Produto" required>
         <input type="text" name="descricao" placeholder="Descricao do Produto" required>
         <input type="text" name="preco" placeholder="Preco" required>
         <input type="text" name="tipo" placeholder="Tipo do produto">
+        <input type="file" name="imagem" required>
         <button type="submit">Adicionar Produto</button>
     </form>
 
@@ -56,21 +58,6 @@ $produtos = $produtosController->listarProdutos();
         $produtosController->exibirListaProdutos();
     ?>
 
-<fieldset>
-    <h2>Atualizar Produto</h2>
-    <form method="post">
-        <select name="id">
-            <?php foreach ($produtos as $produto): ?>
-                <option value="<?php echo $produto['id']; ?>"><?php echo $produto['id']; ?></option>
-            <?php endforeach; ?>
-        </select>
-        <input type="text" name="atualizar_nome" placeholder="Novo Nome do Produto" required>
-        <input type="text" name="atualizar_descricao" placeholder="Nova Descricao do Produto" required>
-        <input type="text" name="atualizar_preco" placeholder="Novo Preco" required>
-        <input type="text" name="atualizar_tipo" placeholder="Novo Tipo de Produto" required>
-        <button type="submit">Atualizar Produto</button>
-    </form>
-    </fieldset>
     <h2>Excluir Produto</h2>
     <form method="post">
         <select name="excluir_id">

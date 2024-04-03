@@ -1,8 +1,6 @@
 <?php
 require_once 'C:\xampp\htdocs\mind_saudavel\ADM\app\model\model.php';
 
-
-
 class UserController {
     private $userModel;
 
@@ -71,8 +69,8 @@ class produtosController {
         $this->produtoModel = new ProdutoModel($pdo);
     }
 
-    public function criarProduto($nome, $descricao, $preco, $tipo) {
-        $this->produtoModel->criarProduto($nome, $descricao, $preco, $tipo);
+    public function criarProduto($nome, $descricao, $preco, $tipo, $imagem) {
+        $this->produtoModel->criarProduto($nome, $descricao, $preco, $tipo, $imagem);
     }
 
     public function listarProdutos() {
@@ -84,8 +82,8 @@ class produtosController {
         include 'C:\xampp\htdocs\mind_saudavel\ADM\app\view\produtos\view.php';
     }
 
-    public function atualizarProduto($id, $nome, $descricao, $preco, $tipo) {
-        $this->produtoModel->atualizarProduto($id, $nome, $descricao, $preco, $tipo);
+    public function atualizarProduto($id, $nome, $descricao, $preco, $tipo, $imagem) {
+        $this->produtoModel->atualizarProduto($id, $nome, $descricao, $preco, $tipo, $imagem);
     }
     
     public function excluirProduto ($id) {
@@ -101,8 +99,8 @@ class artigosController {
         $this->artigoModel = new ArtigoModel($pdo);
     }
 
-    public function criarArtigo($titulo, $conteudo, $autor) {
-        $this->artigoModel->criarArtigo($titulo, $conteudo, $autor);
+    public function criarArtigo($titulo, $conteudo, $autor, $imagem) {
+        $this->artigoModel->criarArtigo($titulo, $conteudo, $autor, $imagem);
     }
 
     public function listarArtigos() {
@@ -114,12 +112,42 @@ class artigosController {
         include 'C:\xampp\htdocs\mind_saudavel\ADM\app\view\artigos\view.php';
     }
 
-    public function atualizarArtigo($id, $titulo, $conteudo, $autor) {
-        $this->artigoModel->atualizarArtigo($id, $titulo, $conteudo, $autor);
+    public function atualizarArtigo($id, $titulo, $conteudo, $autor, $imagem) {
+        $this->artigoModel->atualizarArtigo($id, $titulo, $conteudo, $autor, $imagem);
     }
     
     public function excluirArtigo ($id) {
         $this->artigoModel->excluirArtigo($id);
+    }
+}
+
+class noticiaController {
+    private $noticiaModel;
+
+    public function __construct($pdo) {
+
+        $this->noticiaModel = new NoticiaModel($pdo);
+    }
+
+    public function criarNoticia($titulo, $conteudo, $data, $imagem) {
+        $this->noticiaModel->criarNoticia($titulo, $conteudo, $data, $imagem);
+    }
+
+    public function listarNoticias() {
+        return $this->noticiaModel->listarNoticias();
+    }
+
+    public function exibirListaNoticia() {
+        $noticia = $this->noticiaModel->listarNoticias();
+        include 'C:\xampp\htdocs\mind_saudavel\ADM\app\view\noticias\view.php';
+    }
+
+    public function atualizarNoticia($id, $titulo, $conteudo, $data, $imagem) {
+        $this->noticiaModel->atualizarNoticia($id, $titulo, $conteudo, $data, $imagem);
+    }
+    
+    public function excluirNoticia ($id) {
+        $this->noticiaModel->excluirNoticia($id);
     }
 }
 ?>

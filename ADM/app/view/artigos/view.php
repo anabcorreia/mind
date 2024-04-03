@@ -13,6 +13,7 @@
                         <th>Titulo</th>
                         <th>Conteudo</th>
                         <th>Autor</th>
+                        <th>Imagem</th>
                     </tr>
                 </thead>
                 <?php foreach ($artigos as $artigo): ?>
@@ -22,10 +23,10 @@
                             <td><?php echo $artigo['titulo']; ?></td>
                             <td><?php echo $artigo['conteudo']; ?></td>
                             <td><?php echo $artigo['autor']; ?></td>
+                            <td><img src="<?php echo $artigo['imagem']; ?>"></td>
                 <?php endforeach; ?>
                 <tbody>
             </table>
-            <a href="historico.php">Historico</a>
     </fieldset>
 </body>
 </html>

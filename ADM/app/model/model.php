@@ -80,10 +80,10 @@ class ProdutoModel {
     }
 
     // Model para criar Produtos
-    public function criarProduto($nome, $descricao, $preco, $tipo) {
-        $sql = "INSERT INTO produtos (nome, descricao, preco, tipo) VALUES (?, ?, ?, ?)";
+    public function criarProduto($nome, $descricao, $preco, $tipo, $imagem) {
+        $sql = "INSERT INTO produtos (nome, descricao, preco, tipo, imagem) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$nome, $descricao, $preco, $tipo]);
+        $stmt->execute([$nome, $descricao, $preco, $tipo, $imagem]);
     }
 
     // Model para listar Produtos
@@ -94,10 +94,10 @@ class ProdutoModel {
     }
 
     // Model para atualizar Produtos
-    public function atualizarProduto($id, $nome, $descricao, $preco, $tipo){
-        $sql = "UPDATE produtos SET nome = ?, descricao = ?, preco = ?, tipo = ? WHERE id = ?";
+    public function atualizarProduto($id, $nome, $descricao, $preco, $tipo, $imagem){
+        $sql = "UPDATE produtos SET nome = ?, descricao = ?, preco = ?, tipo = ?, imagem = ? WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$nome, $descricao, $preco, $tipo, $id]);
+        $stmt->execute([$nome, $descricao, $preco, $tipo, $imagem, $id]);
     }
     
     // Model para deletar perguntas
@@ -116,10 +116,10 @@ class ArtigoModel {
     }
 
     // Model para criar Artigos
-    public function criarArtigo($titulo, $conteudo, $autor) {
-        $sql = "INSERT INTO artigos (titulo, conteudo, autor) VALUES (?, ?, ?)";
+    public function criarArtigo($titulo, $conteudo, $autor, $imagem) {
+        $sql = "INSERT INTO artigos (titulo, conteudo, autor, imagem) VALUES (?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$titulo, $conteudo, $autor]);
+        $stmt->execute([$titulo, $conteudo, $autor, $imagem]);
     }
 
     // Model para listar Artigos
@@ -130,15 +130,51 @@ class ArtigoModel {
     }
 
     // Model para atualizar Artigos
-    public function atualizarArtigo($id, $titulo, $conteudo, $autor){
-        $sql = "UPDATE artigos SET titulo = ?, conteudo = ?, autor = ? WHERE id = ?";
+    public function atualizarArtigo($id, $titulo, $conteudo, $autor, $imagem){
+        $sql = "UPDATE artigos SET titulo = ?, conteudo = ?, autor = ?, imagem =? WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$titulo, $conteudo, $autor, $id]);
+        $stmt->execute([$titulo, $conteudo, $autor, $imagem, $id]);
     }
     
     // Model para deletar perguntas
     public function excluirArtigo($id) {
         $sql = "DELETE FROM artigos WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id]);
+    }
+}
+
+    class NoticiaModel {
+    private $pdo;
+
+    public function __construct($pdo) {
+        $this->pdo = $pdo;
+    }
+
+    // Model para criar noticias
+    public function criarNoticia($titulo, $conteudo, $data, $imagem) {
+        $sql = "INSERT INTO noticias (titulo, conteudo, data, imagem) VALUES (?, ?, ?, ?)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$titulo, $conteudo, $data, $imagem]);
+    }
+
+    // Model para listar noticias
+    public function listarnoticias() {
+        $sql = "SELECT * FROM noticias";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Model para atualizar noticias
+    public function atualizarNoticia($id, $titulo, $conteudo, $data, $imagem){
+        $sql = "UPDATE noticias SET titulo = ?, conteudo = ?, data = ?, imagem = ? WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$titulo, $conteudo, $data, $imagem, $id]);
+    }
+    
+    // Model para deletar perguntas
+    public function excluirNoticia($id) {
+        $sql = "DELETE FROM noticias WHERE id = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$id]);
     }

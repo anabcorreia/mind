@@ -11,9 +11,9 @@ class userController {
         $result = $this->userModel->criarUser($nome, $nome_u, $email, $senha);   
 
         if ($result) {
-            $_SESSION['mensagem'] = '>Conta criada com sucesso';
+            $_SESSION['mensagem'] = 'Conta criada com sucesso';
         } else {
-            $_SESSION['mensagem'] = '>Erro ao criar a conta';
+            $_SESSION['mensagem'] = 'Erro ao criar a conta';
         }
     }
 }

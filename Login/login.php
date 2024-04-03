@@ -23,9 +23,9 @@ session_start();
                 </div>
             </div>
             <div class="redes">
-                <div class="rede-b"><a href=""></a></div>
-                <div class="rede-b"><a href=""></a></div>
-                <div class="rede-b"><a href=""></a></div>
+            <div class="rede-b"><a href=""><img src="public/assets/facebook.png" alt=""></a></div>
+                <div class="rede-b"><a href=""><img src="public/assets/insta.png" alt=""></a></div>
+                <div class="rede-b"><a href=""><img src="public/assets/google.png" alt=""></a></div>
             </div>
             <div class="cad-txt">
                 Nao tem uma conta?<a href="cadastro.php" class="no-underline">Cadastre-se!</a>
