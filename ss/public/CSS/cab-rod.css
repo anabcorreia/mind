@@ -1,6 +1,16 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 12.5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5db17c; /* Cor do polegar da barra de rolagem */
+    border-radius: 10px; /* Raio da borda do polegar da barra de rolagem */
 }
 
 .grid{
@@ -19,7 +29,7 @@ header{
     grid-area: cab;
     width: 100%;
     height: 100%;
-    background-color: #9EFF8E;
+    background-color: #74e09c;
 }
 
 nav{
@@ -76,17 +86,34 @@ nav{
     height: 10vh;
 }
 
+.search-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+}
+
+.logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+
+.logout-img {
+    height: 7vh;
+}
+
 section{
     grid-area: pag;
     background-color: #D2FFD1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 70vh;
 }
 
 footer{
     grid-area: rod;
-    background-color: #389A48;
+    background-color: #077d45d1;
 }
 
 .contato{
@@ -116,9 +143,150 @@ footer{
     align-items: center;
 }
 
+
 .rs{
     width: 60px;
     height: 60px;
     border-radius: 40%;
     background-color: #9EFF8E;
+}
+
+.rs img{
+    width: 60px;
+    height: 60px;
+    background-color: #FFF;
+    border-radius: 17px;
+}
+
+@media (width <= 576px){
+    .grid{
+        width: 100vw;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 100% 100% 100%; 
+        grid-template-rows: 6vh auto 20vh;
+        grid-template-areas:
+            "cab"
+            "pag"
+            "rod";
+    }
+    
+    header{
+        grid-area: cab;
+        width: 100%;
+        height: 100%;
+        background-color: #74e09c;
+    }
+    
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        height: 100%;
+    }
+    
+    .logo{
+        height: 6vh;
+    }
+    
+    .logo-a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .logo-a img{
+        height: 6vh;
+    }
+    
+    .menu-nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+    
+    .nav-list{
+        display: flex;
+        list-style: none;
+    }
+    
+    .nav-button{
+        padding: 0 1vw 0 1vw;
+    }
+    
+    .nav-link{
+        font-size: 10px;
+        font-family: "Inter", sans-serif;
+        color: #000;
+        text-decoration: none;
+    }
+    
+    .search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+    }
+
+    .search-img{
+        height: 6vh;
+    }
+    
+    section{
+        grid-area: pag;
+        background-color: #D2FFD1;
+        min-height: 70vh;
+    }
+    
+    footer{
+        grid-area: rod;
+        background-color: #077d45d1;
+    }
+    
+    .contato{
+        width: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 8vw;
+    }
+    
+    .rod-txt{
+        width: 9vw;
+        margin: 0 1vw 0 0;
+    }
+    
+    .rod-txt p{
+        font-size: 28px;
+        font-family: "Inter", sans-serif;
+        color: #FFF;
+    }
+    
+    .rod-img{
+        width: 30vw;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    
+    .rs{
+        width: 60px;
+        height: 60px;
+        border-radius: 40%;
+        background-color: #9EFF8E;
+    }
+    
+    .rs img{
+        width: 60px;
+        height: 60px;
+        background-color: #FFF;
+        border-radius: 17px;
+    }
 }
