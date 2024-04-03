@@ -30,7 +30,7 @@
                 </div>
                 <div class="menu-nav">
                     <ul class="nav-list">
-                        <li class="nav-button"><a href="noticia.php" class="nav-link">Artígos</a></li>
+                        <li class="nav-button"><a href="artigo.php" class="nav-link">Artígos</a></li>
                         <li class="nav-button"><a href="noticias.php" class="nav-link">Notícias</a></li>
                         <li class="nav-button"><a href="jogos.php" class="nav-link">Jogos</a></li>
                         <li class="nav-button"><a href="produtos.php" class="nav-link">Produtos</a></li>
