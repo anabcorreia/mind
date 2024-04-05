@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\mind_saudavel\ADM\app\model\model.php';
+require_once 'C:\xampp\htdocs\mind_saudavel\SS\app\model\model.php';
 
 class UserController {
     private $userModel;
@@ -77,6 +77,10 @@ class produtosController {
         return $this->produtoModel->listarProdutos();
     }
 
+    public function listarProdutoPorID($id) {
+        return $this->produtoModel->listarProdutoPorID($id);
+    }
+
     public function exibirListaProdutos() {
         $produtos = $this->produtoModel->listarProdutos();
         include 'C:\xampp\htdocs\mind_saudavel\ADM\app\view\produtos\view.php';
@@ -106,10 +110,14 @@ class artigosController {
     public function listarArtigos() {
         return $this->artigoModel->listarArtigos();
     }
+    
+    public function listarArtigoPorID($id) {
+        return $this->artigoModel->listarArtigoPorID($id);
+    }
 
     public function exibirListaArtigos() {
         $artigos = $this->artigoModel->listarArtigos();
-        include 'C:\xampp\htdocs\mind_saudavel\ADM\app\view\artigos\view.php';
+        include 'C:\xampp\htdocs\mind_saudavel\SS\app\view\artigo\view.php';
     }
 
     public function atualizarArtigo($id, $titulo, $conteudo, $autor, $imagem) {
@@ -135,6 +143,10 @@ class noticiasController {
 
     public function listarNoticias() {
         return $this->noticiaModel->listarNoticias();
+    }
+
+    public function listarNoticiaPorID($id) {
+        return $this->noticiaModel->listarNoticiaPorID($id);
     }
 
     public function exibirListaNoticia() {

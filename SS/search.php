@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/CSS/cab-rod.css">
-    <link rel="stylesheet" href="public/CSS/index.css">
+    <link rel="stylesheet" href="public/CSS/search.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -49,41 +49,14 @@
             </nav>
         </header>
         <section>
-            <h2>Resultados da busca</h2>
-
-            <h3>Artigos</h3>
-            <?php if(!empty($artigos)): ?>
-                <ul>
-                    <?php foreach($artigos as $artigo): ?>
-                        <li><?php echo $artigo['titulo']; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php else: ?>
-                <p>Nenhum artigo encontrado.</p>
-            <?php endif; ?>
-            
-            <h3>Notícias</h3>
-            <?php if(!empty($noticias)): ?>
-                <ul>
-                    <?php foreach($noticias as $noticia): ?>
-                        <li><?php echo $noticia['titulo']; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php else: ?>
-                <p>Nenhuma notícia encontrada.</p>
-            <?php endif; ?>
-            
-            <h3>Perguntas</h3>
-            <?php if(!empty($perguntas)): ?>
-                <ul>
-                    <?php foreach($perguntas as $pergunta): ?>
-                        <li><?php echo $pergunta['pergunta']; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php else: ?>
-                <p>Nenhuma pergunta encontrada.</p>
-            <?php endif; ?>
-
+            <div class="search">
+                <form id="search-form">
+                    <input type="search" id="search-input" placeholder="Pesquise Aqui">
+                        <ul id="suggestions"></ul>
+                </form>
+                    
+                <script src="public/js/search.js"></script>
+            </div>
         </section>
         <footer>
             <div class="contato">
@@ -91,9 +64,9 @@
                     <p>Contato:</p>
                 </div>
                 <div class="rod-img">
-                    <div class="rs"><img src="public/assets/facebook.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/insta.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/google.png" alt="rs"></div>
+                    <div class="rs"><a href="./facebook.com"><img src="public/assets/facebook.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./instagram.com"><img src="public/assets/insta.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./gmail.com"><img src="public/assets/google.png" alt="rs"></a></div>
                 </div>
             </div>
         </footer>

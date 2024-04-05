@@ -93,6 +93,13 @@ class ProdutoModel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+        // Model para listar produto por ID
+        public function listarProdutoPorID($id) {
+            $sql = "SELECT * FROM produtos WHERE id = $id";
+            $stmt = $this->pdo->query($sql);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
     // Model para atualizar Produtos
     public function atualizarProduto($id, $nome, $descricao, $preco, $tipo){
         $sql = "UPDATE produtos SET nome = ?, descricao = ?, preco = ?, tipo = ? WHERE id = ?";
@@ -127,6 +134,13 @@ class ArtigoModel {
         $sql = "SELECT * FROM artigos";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    // Model para listar Artigo por ID
+    public function listarArtigoPorID($id) {
+        $sql = "SELECT * FROM artigos WHERE id = $id";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     // Model para atualizar Artigos
@@ -163,6 +177,13 @@ class ArtigoModel {
         $sql = "SELECT * FROM noticias";
         $stmt = $this->pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Model para listar produto por ID
+    public function listarNoticiaPorID($id) {
+        $sql = "SELECT * FROM noticias WHERE id = $id";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     // Model para atualizar noticias

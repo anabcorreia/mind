@@ -1,6 +1,13 @@
 <?php
-        session_start();
-        include 'verfica_login.php';
+session_start();
+include 'verfica_login.php';
+require_once '../db/db.php';
+require_once 'app/controller/controller.php';
+
+$artigosController = new artigosController($pdo);
+$idDoArtigo = $_GET['id'];
+$artigo = $artigosController->listarArtigoPorID($idDoArtigo); // Assuming this retrieves a single article
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,16 +15,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/CSS/cab-rod.css">
-    <link rel="stylesheet" href="public/CSS/ajuda.css">
+    <link rel="stylesheet" href="public/CSS/ler-artigo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <title>Ajuda</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Index</title>
 </head>
 <body>
 <div class="grid">
         <header>
-        <nav>
+            <nav>
                 <div class="logo">
                     <a class="logo-a" href="index.php">
                         <img src="public/Assets/logo.jpeg" alt="logo">
@@ -46,30 +54,18 @@
             </nav>
         </header>
         <section>
-        <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Ajuda Psicológica</title>
-</head>
-<body>
-    <h1>Bem-vindo à nossa página de Ajuda Psicológica</h1>
-    <p>Navegar pelos desafios da vida pode ser difícil, e é completamente normal sentir-se sobrecarregado em algum momento. Aqui, na nossa página de Ajuda Psicológica, estamos aqui para oferecer suporte e orientação durante esses momentos desafiadores.</p>
-    <p>Nossa equipe de profissionais dedicados está comprometida em fornecer um espaço seguro e acolhedor para explorar seus pensamentos, sentimentos e preocupações. Se você está lidando com ansiedade, depressão, estresse, relacionamentos difíceis ou qualquer outra dificuldade emocional, estamos aqui para ajudar.</p>
-    <p>Navegue por nosso site para descobrir uma variedade de recursos úteis, incluindo artigos informativos, dicas práticas para o bem-estar mental, exercícios de relaxamento e muito mais. Além disso, oferecemos a oportunidade de agendar sessões de aconselhamento individualizado com nossos experientes psicólogos.</p>
-    <p>Lembre-se, você não está sozinho. Não hesite em entrar em contato conosco se precisar de apoio. Juntos, podemos trabalhar em direção a uma vida mais feliz, saudável e equilibrada.</p>
-    <p>Estamos aqui para ajudar. Seja bem-vindo à sua jornada de autocuidado e crescimento pessoal.</p>
-    
-    <h2>Contatos:</h2>
-    <ul>
-        <li>Instagram: <a href="https://www.instagram.com/nossoinstagram">@nossoinstagram</a></li>
-        <li>Facebook: <a href="https://www.facebook.com/nossopage">/nossopage</a></li>
-        <li>Gmail: <a href="mailto:nossogmail@gmail.com">nossogmail@gmail.com</a></li>
-    </ul>
-</body>
-</html>
-
+            <!-- ACREDITO QUE NESSA SEÇÃO VOCÊ VAI PRECISAR FAZER UM LAÇO DE REPETIÇÃO -->
+            <div class="le">
+                <img src="<?php echo $artigo['imagem'] ?>" alt="Imagem do artigo">
+            </div>
+            <div class="ld">
+                <div class="titulo"><p><?php echo $artigo['titulo'] ?></p></div>
+                <div class="conteudo"><p><?php echo $artigo['conteudo'] ?></p></div>
+            </p>
+            </div>
+            <div class="lb">
+                <p>AUTOR:<?php echo $artigo['autor'] ?></p>
+            </div>
         </section>
         <footer>
             <div class="contato">

@@ -52,12 +52,13 @@
         </header>
         <section>
             <?php foreach($produtos as $produto): ?>
-            <div class="container">
-                <div class="cont-img"><img src="../uploads/<?php echo $produto['imagem']; ?>" alt="Imagem do produto"></div>
-                <div class="cont-txt"><p><?php echo $produto['nome']; ?></p></div>
-                <div class="cont-txt"><p>R$<?php echo $produto['preco']; ?></p></div>
-                <div class="comprar"><a href="">Comprar!</a></div>
-            </div>
+                <?php echo '<a class="bt-cont" href="comprar.php?id=' . $produto['id'] . '">'?>
+                    <div class="container">
+                        <div class="cont-img"><img src="../uploads/<?php echo $produto['imagem']; ?>" alt="Imagem do produto"></div>
+                        <div class="cont-txt"><p><?php echo $produto['nome']; ?></p></div>
+                        <div class="cont-txt"><p>R$<?php echo $produto['preco']; ?></p></div>
+                    </div>
+                </a>
             <?php endforeach; ?>
         </section>
         <footer>
@@ -66,9 +67,9 @@
                     <p>Contato:</p>
                 </div>
                 <div class="rod-img">
-                    <div class="rs"><img src="public/assets/facebook.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/insta.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/google.png" alt="rs"></div>
+                    <div class="rs"><a href="./facebook.com"><img src="public/assets/facebook.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./instagram.com"><img src="public/assets/insta.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./gmail.com"><img src="public/assets/google.png" alt="rs"></a></div>
                 </div>
             </div>
         </footer>

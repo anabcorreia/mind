@@ -51,11 +51,13 @@
             </nav>
         </header>
         <section>
-        <?php foreach ($noticias as $noticia): ?>    
+        <?php foreach ($noticias as $noticia): ?> 
+            <?php echo '<a class="bt-cont" href="l-noticia.php?id=' . $noticia['id'] . '">'?>   
                 <div class="container">
                     <div class="cont-img"><img src="../uploads/<?php echo $noticia['imagem']; ?>" alt="Imagem da noticia"></div>
                     <div class="cont-txt"><p><?php echo $noticia['titulo']; ?></p></div>
                 </div>
+            </a>
             <?php endforeach; ?>
         </section>
         <footer>
@@ -64,9 +66,9 @@
                     <p>Contato:</p>
                 </div>
                 <div class="rod-img">
-                    <div class="rs"><img src="public/assets/facebook.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/insta.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/google.png" alt="rs"></div>
+                    <div class="rs"><a href="./facebook.com"><img src="public/assets/facebook.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./instagram.com"><img src="public/assets/insta.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./gmail.com"><img src="public/assets/google.png" alt="rs"></a></div>
                 </div>
             </div>
         </footer>

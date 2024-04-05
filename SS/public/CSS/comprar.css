@@ -1,0 +1,43 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.le{
+    width: 50%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh 0 0 0;
+}
+
+.le img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.ld{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5vh 0 0 0;
+    width: 48%;
+    min-height: 50vh;    
+    padding: 1vh .5vw 1vh .5vw;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.ld p{
+    text-align: justify;
+}
+

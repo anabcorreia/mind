@@ -1,0 +1,60 @@
+/* BARRA DE PESQUISA */
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 0;
+  }
+  
+  .search input {
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 0.313rem;
+    padding: 0 10px 0 15px;
+    font-size: 1.125rem;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+    font-family: 'Abel', sans-serif;
+  }
+  
+  .search.active input {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .search .list {
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 17.5rem;
+  }
+  
+  #suggestions {
+    font-family: inter;
+    background: whitesmoke;
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 83.5%;
+    cursor: default;
+    border-radius: 3px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+  }
+  
+  .search.active #suggestions {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+    margin: 0;
+    z-index: 100;
+  }
+  
+  .search.active #suggestions li {
+    display: block;
+  }
+  
+  #suggestions li:hover {
+    background: #efefef;
+  }
