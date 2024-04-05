@@ -3,13 +3,12 @@
 		if(isset($_POST['env']) && $_POST['env'] == "form"){
 			$email = addslashes($_POST['email']);
 			$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
-			$stmt->bind_param("s", $email);
+			$stmt->bindParam(1, $email);
 			$stmt->execute();
-			$result = $stmt->get_result();
-			$total = $result->num_rows;
+			$total = $stmt->rowCount();
 
 			if($total > 0){
-				$dados = $result->fetch_assoc();
+				$dados = $stmt->fetch();
 				add_dados_recover($pdo, $email);
 			}else{
 				// Trate o caso em que nenhum usuário com o email fornecido foi encontrado
@@ -20,10 +19,11 @@
 	function add_dados_recover($pdo, $email){
 		$rash = md5(rand());
 		$stmt = $pdo->prepare("INSERT INTO recover_solicitation (email, rash) VALUES (?, ?)");
-		$stmt->bind_param("ss", $email, $rash);
+		$stmt->bindParam(1, $email);
+		$stmt->bindParam(2, $rash);
 		$stmt->execute();
 
-		if($stmt->affected_rows > 0){
+		if($stmt->rowCount() > 0){
 			enviar_email($pdo, $email, $rash);
 		}
 	}
@@ -45,16 +45,21 @@
 
 		$message .="</head></html>";
 
+		ini_set("SMTP","smtp.gmail.com");
+		ini_set("smtp_port","465");
+		ini_set("sendmail_from","carronananiasx@gmail.com");
+		ini_set("sendmail_path", "C:\xampp\sendmail\sendmail.exe");
+
 		if(mail($destinatario, $subject, $message, $headers)){
 			echo "<div class='alert alert-success'>Os dados foram enviados para o seu email. Acesse para recuperar.</div>";
 		}else{
-			echo "<div class='alert alert-danger'>Erro ao enviar</div>". $pdo->error;
+			echo "<div class='alert alert-danger'>Erro ao enviar</div>". print_r($pdo->errorInfo());
 		}
 	}
 
 	function verifica_rash($pdo, $rash){
 		$stmt = $pdo->prepare("SELECT * FROM recover_solicitation WHERE rash = ? AND status = 0");
-		$stmt->bind_param("s", $rash);
+		$stmt->bindParam("s", $rash);
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$total = $result->num_rows;
@@ -76,7 +81,7 @@
 
 	function atualiza_senha($pdo, $email, $senha){
 		$stmt = $pdo->prepare("UPDATE usuarios SET senha = ? WHERE email = ?");
-		$stmt->bind_param("ss", $senha, $email);
+		$stmt->bindParam("ss", $senha, $email);
 		$stmt->execute();
 
 		if($stmt->affected_rows > 0){
@@ -88,7 +93,7 @@
 
 	function deleta_rashs($pdo, $email){
 		$stmt = $pdo->prepare("DELETE FROM recover_solicitation WHERE email = ?");
-		$stmt->bind_param("s", $email);
+		$stmt->bindParam("s", $email);
 		$stmt->execute();
 
 		if($stmt->affected_rows > 0){

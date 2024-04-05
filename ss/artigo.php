@@ -51,11 +51,13 @@
             </nav>
         </header>
         <section>
-            <?php foreach ($artigos as $artigo): ?>    
-                <div class="container">
-                    <div class="cont-img"><img src="../uploads/<?php echo $artigo['imagem']; ?>" alt="Imagem do artigo"></div>
-                    <div class="cont-txt"><p><?php echo $artigo['titulo']; ?></p></div>
-                </div>
+            <?php foreach ($artigos as $artigo): ?> 
+                <?php echo '<a class="bt-cont" href="l-artigo.php?id=' . $artigo['id'] . '">'?>   
+                    <div class="container">
+                        <div class="cont-img"><img src="../uploads/<?php echo $artigo['imagem']; ?>" alt="Imagem do artigo"></div>
+                        <div class="cont-txt"><p><?php echo $artigo['titulo']; ?></p></div>
+                    </div>
+                </a>
             <?php endforeach; ?>
         </section>
         <footer>
@@ -64,9 +66,9 @@
                     <p>Contato:</p>
                 </div>
                 <div class="rod-img">
-                    <div class="rs"><img src="public/assets/facebook.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/insta.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/google.png" alt="rs"></div>
+                    <div class="rs"><a href="./facebook.com"><img src="public/assets/facebook.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./instagram.com"><img src="public/assets/insta.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./gmail.com"><img src="public/assets/google.png" alt="rs"></a></div>
                 </div>
             </div>
         </footer>

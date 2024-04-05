@@ -68,13 +68,12 @@
                     <p>Contato:</p>
                 </div>
                 <div class="rod-img">
-                    <div class="rs"><img src="public/assets/facebook.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/insta.png" alt="rs"></div>
-                    <div class="rs"><img src="public/assets/google.png" alt="rs"></div>
+                    <div class="rs"><a href="./facebook.com"><img src="public/assets/facebook.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./instagram.com"><img src="public/assets/insta.png" alt="rs"></a></div>
+                    <div class="rs"><a href="./gmail.com"><img src="public/assets/google.png" alt="rs"></a></div>
                 </div>
             </div>
         </footer>
     </div>
 </body>
 </html>
-<scrip src="public/js/menu-mob.js"></script>
